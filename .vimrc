@@ -37,6 +37,15 @@ Plugin 'tarikgraba/vim-liberty'
 " Add vim-cpp-enhanced-highlight, enhance the syntax highlight for C++
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+" Add vim-signature, add signs before the marked lines
+Plugin 'kshenoy/vim-signature'
+
+" Add NERDTree, a tree explorer plugin for vim
+Plugin 'scrooloose/nerdtree'
+
+" Add vim-lefdef, a LEF/DEF syntax file
+Plugin 'tarikgraba/vim-lefdef'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,6 +63,9 @@ filetype plugin indent on    " required
 
 
 " ************ My settings ***************
+
+" Tab and indent settings
+set shiftwidth=4
 set tabstop=4
 
 " Auto apply .vimrc when saving
@@ -88,6 +100,37 @@ set hlsearch
 set t_Co=256
 set background=dark
 colorscheme molokai
+
+" No wrapping lines
+set nowrap
+
+" Turn on folding based on syntax
+set foldmethod=syntax
+set nofoldenable
+
+" Iterate the tag stack 
+nmap tn :tnext<CR>
+nmap tp :tprevious<CR>
+
+" Change the NERDTree arrows
+let NERDTreeDirArrowExpandable='+'
+let NERDTreeDirArrowCollapsible='~'
+let NERDTreeNodeDelimiter="\t"
+
+" Auto start NERDTree when open a directory
+" autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Auto close NERDTree if it is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Auto detect the LEF/DEF filetype
+autocmd FileType lef so ~/.vim/syntax/lef.vim
+autocmd FileType def so ~/.vim/syntax/def.vim
+
+" Turn on smart indent
+set smartindent
 
 " ************ Auto-compile *************
 map <F5> :call CompileRunGcc()<CR>
