@@ -29,7 +29,8 @@ Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " Add jedi-vim, a Python autocompletion plugin
-Plugin 'davidhalter/jedi-vim'
+" Remove jedi-vim, because of syntax error
+" Plugin 'davidhalter/jedi-vim'
 
 " Add vim-liberty, a syntax plugin for liberty files
 Plugin 'tarikgraba/vim-liberty'
@@ -45,6 +46,9 @@ Plugin 'scrooloose/nerdtree'
 
 " Add vim-lefdef, a LEF/DEF syntax file
 Plugin 'tarikgraba/vim-lefdef'
+
+" Add AutoComplPop, automatically opens popup menu for completions
+Plugin 'vim-scripts/AutoComplPop'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,8 +78,9 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " Turn on incremental search
 set incsearch
 
-" Not case-sensitive
+" Not case-sensitive, using smart case
 set ignorecase
+set smartcase
 
 " Vim command-line auto-complete
 set wildmenu
@@ -91,7 +96,7 @@ set number
 
 " Highlight the current line and column
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 
 " Highlight the search results
 set hlsearch
@@ -102,7 +107,7 @@ set background=dark
 colorscheme molokai
 
 " No wrapping lines
-set nowrap
+" set nowrap
 
 " Turn on folding based on syntax
 set foldmethod=syntax
@@ -132,6 +137,16 @@ autocmd FileType def so ~/.vim/syntax/def.vim
 " Turn on smart indent
 set smartindent
 
+" Turn off showmatch
+" set noshowmatch
+
+" Cat selected text
+let mapleader=";"
+xnoremap <leader>c <ESC>:'<,'>:w !cat<CR>
+" function Test() range
+"   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| pbcopy')
+" endfunction
+
 " ************ Auto-compile *************
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
@@ -148,7 +163,7 @@ func! CompileRunGcc()
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
-		exec "!time python2.7 %"
+		exec "!time python2 %"
     elseif &filetype == 'html'
         exec "!firefox % &"
     elseif &filetype == 'go'
