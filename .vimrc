@@ -143,9 +143,12 @@ set smartindent
 " Cat selected text
 let mapleader=";"
 xnoremap <leader>c <ESC>:'<,'>:w !cat<CR>
-" function Test() range
-"   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| pbcopy')
-" endfunction
+
+" Adjust indent for selected text using TAB
+" xnoremap <TAB> <ESC>:'<,'>:s/^/\t/g<CR>
+
+" Vertical go-to-file split
+map <leader>f :vertical wincmd f<CR>
 
 " ************ Auto-compile *************
 map <F5> :call CompileRunGcc()<CR>
