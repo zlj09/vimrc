@@ -175,5 +175,7 @@ func! CompileRunGcc()
     elseif &filetype == 'mkd'
         exec "!~/.vim/markdown.pl % > %.html &"
         exec "!firefox %.html &"
+	elseif &filetype == 'tcl'
+		exec "!time tclsh %"
 	endif
 endfunc
