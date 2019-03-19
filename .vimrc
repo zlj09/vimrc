@@ -50,6 +50,9 @@ Plugin 'tarikgraba/vim-lefdef'
 " Add AutoComplPop, automatically opens popup menu for completions
 Plugin 'vim-scripts/AutoComplPop'
 
+" Add LargeFile, disable lots of functions if the file is too large
+Plugin 'vim-scripts/LargeFile'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -177,5 +180,7 @@ func! CompileRunGcc()
         exec "!firefox %.html &"
 	elseif &filetype == 'tcl'
 		exec "!time tclsh %"
+	elseif &filetype == 'csh'
+		exec "!time csh %"
 	endif
 endfunc
