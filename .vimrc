@@ -53,6 +53,9 @@ Plugin 'vim-scripts/AutoComplPop'
 " Add LargeFile, disable lots of functions if the file is too large
 " Plugin 'vim-scripts/LargeFile'
 
+" Add NERD Commenter, a plugin to comment in/out code block
+Plugin 'scrooloose/nerdcommenter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -155,6 +158,19 @@ noremap <Leader>P "+p
 
 " Adjust indent for selected text using TAB
 " xnoremap <TAB> <ESC>:'<,'>:s/^/\t/g<CR>
+
+" Disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Custimized settings for Nerd Commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 " Vertical go-to-file split
 map <leader>f :vertical wincmd f<CR>
