@@ -51,7 +51,7 @@ Plugin 'tarikgraba/vim-lefdef'
 Plugin 'vim-scripts/AutoComplPop'
 
 " Add LargeFile, disable lots of functions if the file is too large
-Plugin 'vim-scripts/LargeFile'
+" Plugin 'vim-scripts/LargeFile'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -145,7 +145,13 @@ set smartindent
 
 " Cat selected text
 let mapleader=";"
-xnoremap <leader>c <ESC>:'<,'>:w !cat<CR>
+"xnoremap <leader>c <ESC>:'<,'>:w !cat<CR>
+
+" Copy/paste settings for vimx
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 " Adjust indent for selected text using TAB
 " xnoremap <TAB> <ESC>:'<,'>:s/^/\t/g<CR>
