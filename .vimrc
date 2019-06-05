@@ -175,6 +175,9 @@ let g:NERDToggleCheckAllLines = 1
 " Vertical go-to-file split
 map <leader>f :vertical wincmd f<CR>
 
+" Copy the absolute path of current file
+nmap <leader>g :let @* = expand("%:p")<cr>
+
 " ************ Auto-compile *************
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
