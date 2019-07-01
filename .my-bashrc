@@ -1,7 +1,11 @@
-alias ctags_all='ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q --language-force=c++'
 export QT_X11_NO_MITSHM=1
-alias unzip_gz "gzip -d"
-alias unzip_tar_gz "tar -xvzf" 
-alias lt "ls -la --time-style=full-is" 
-alias vim='vimx'
-alias git2 "/home/gtcad9/lzhu308/software/git-2.21.0/bin/git"
+
+alias ctags_all='ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q --language-force=c++'
+
+alias unzip_gz="gzip -d"
+alias unzip_tar_gz="tar -xvzf" 
+alias unzip_tgz="tar -xvzf"
+
+alias lt="ls -la --time-style=full-is" 
+
+alias vim="vimx"
