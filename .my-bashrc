@@ -9,3 +9,6 @@ alias unzip_tgz="tar -xvzf"
 alias lt="ls -la --time-style=full-is" 
 
 alias vim="vimx"
+
+alias rclone_mount_onedrive_gatech="rclone --vfs-cache-mode writes mount onedrive_gatech: ~/cloud/onedrive_gatech &"
+

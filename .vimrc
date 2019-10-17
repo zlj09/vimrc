@@ -177,6 +177,18 @@ map <leader>f :vertical wincmd f<CR>
 
 " Copy the absolute path of current file
 nmap <leader>g :let @* = expand("%:p")<cr>
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+" Set paste mode automatically to avoid unexpected indent
 
 " ************ Auto-compile *************
 map <F5> :call CompileRunGcc()<CR>
@@ -186,7 +198,7 @@ func! CompileRunGcc()
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
+		exec "!g++ -std=c++11 % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'java' 
 		exec "!javac %" 

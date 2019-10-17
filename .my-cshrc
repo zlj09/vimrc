@@ -8,3 +8,5 @@ alias lt "ls -la --time-style=full-is"
 
 alias vim "vimx"
 alias git2 "/home/gtcad9/lzhu308/software/git-2.21.0/bin/git"
+
+alias rclone_mount_onedrive_gatech "rclone --vfs-cache-mode writes mount onedrive_gatech: ~/cloud/onedrive_gatech &"
