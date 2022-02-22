@@ -156,6 +156,10 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>v "_dP
+
 " Adjust indent for selected text using TAB
 " xnoremap <TAB> <ESC>:'<,'>:s/^/\t/g<CR>
 

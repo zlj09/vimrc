@@ -5,10 +5,19 @@ alias ctags_all='ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+lia
 alias unzip_gz="gzip -d"
 alias unzip_tar_gz="tar -xvzf" 
 alias unzip_tgz="tar -xvzf"
+alias unzip_tar="tar -xvf"
 
-alias lt="ls -la --time-style=full-is" 
+alias zip_tar_gz="tar -czvf"
+
+alias lt="ls -ltra --time-style=full-is" 
 
 alias vim="vimx"
 
 alias rclone_mount_onedrive_gatech="rclone --vfs-cache-mode writes mount onedrive_gatech: ~/cloud/onedrive_gatech &"
 
+PATH=$PATH:/home/gtcad9/lzhu308/software/anaconda3/bin
+
+alias dh="du -h --max-depth=1" 
+
+# cp_exclude [relative path to directory to exclude] /path/from /path/to
+alias cp_exclude="rsync -ax --exclude"
