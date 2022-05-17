@@ -74,6 +74,9 @@ filetype plugin indent on    " required
 
 " ************ My settings ***************
 
+" Enable backspace
+set backspace=indent,eol,start
+
 " Tab and indent settings
 set shiftwidth=4
 set tabstop=4
@@ -111,6 +114,7 @@ set hlsearch
 set t_Co=256
 set background=dark
 colorscheme molokai
+syntax on
 
 " No wrapping lines
 " set nowrap
