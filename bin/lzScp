@@ -1,0 +1,3 @@
+#! /bin/csh
+# scp lzhu@msc-lzhu01.csg.apple.com:$1 $2
+scp lzhu308@ece-rschsrv01.ece.gatech.edu:$1 $2

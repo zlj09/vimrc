@@ -15,7 +15,7 @@ alias vim="vimx"
 
 alias rclone_mount_onedrive_gatech="rclone --vfs-cache-mode writes mount onedrive_gatech: ~/cloud/onedrive_gatech &"
 
-PATH=$PATH:/home/gtcad9/lzhu308/software/anaconda3/bin
+PATH=$PATH:${HOME}/bin:/home/gtcad9/lzhu308/software/anaconda3/bin
 
 # alias ds="du -h -a --max-depth=0 * | sort -rh" 
 # alias dh="du -h -a --max-depth=1" 

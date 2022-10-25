@@ -1,0 +1,4 @@
+#! /bin/csh
+
+# ssh lzhu@msc-lzhu01.csg.apple.com
+ssh lzhu308@ece-rschsrv01.ece.gatech.edu
