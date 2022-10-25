@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Generate new SSH key
+# ssh-keygen -t ed25519 -C "your_email@example.com"
+
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
