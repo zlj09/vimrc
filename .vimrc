@@ -43,6 +43,8 @@ Plugin 'kshenoy/vim-signature'
 
 " Add NERDTree, a tree explorer plugin for vim
 Plugin 'scrooloose/nerdtree'
+" Show the hidden files by default
+" let NERDTreeShowHidden=1
 
 " Add vim-lefdef, a LEF/DEF syntax file
 Plugin 'tarikgraba/vim-lefdef'
@@ -58,6 +60,13 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Add VIM Airline, a toolbar
 Plugin 'vim-airline/vim-airline'
+
+" " Not working for VIM v7!
+" " Add Gutentags, a ctags manager
+" Plugin 'ludovicchabant/vim-gutentags'
+" " Visualize the tag generation process
+" set statusline+=%{gutentags#statusline()}
+" let g:gutentags_cache_dir = '~/gutentags_cache'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -125,9 +134,10 @@ syntax on
 " No wrapping lines
 " set nowrap
 
-" Turn on folding based on syntax
+" Turn on folding based on indent
 set foldmethod=indent
 set foldcolumn=1
+" Unfold everything in a file by default
 set foldlevel=99
 set mouse=a
 " set nofoldenable
