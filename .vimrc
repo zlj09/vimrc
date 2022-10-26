@@ -56,6 +56,9 @@ Plugin 'vim-scripts/AutoComplPop'
 " Add NERD Commenter, a plugin to comment in/out code block
 Plugin 'scrooloose/nerdcommenter'
 
+" Add VIM Airline, a toolbar
+Plugin 'vim-airline/vim-airline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,6 +76,9 @@ filetype plugin indent on    " required
 
 
 " ************ My settings ***************
+
+" Enable backspace
+set backspace=indent,eol,start
 
 " Tab and indent settings
 set shiftwidth=4
@@ -109,15 +115,22 @@ set hlsearch
 
 " Color and scheme
 set t_Co=256
+" Molokai color settings
 set background=dark
+" colorscheme molokai
 colorscheme molokai
+
+syntax on
 
 " No wrapping lines
 " set nowrap
 
 " Turn on folding based on syntax
-set foldmethod=syntax
-set nofoldenable
+set foldmethod=indent
+set foldcolumn=1
+set foldlevel=99
+set mouse=a
+" set nofoldenable
 
 " Iterate the tag stack 
 nmap tn :tnext<CR>
@@ -178,6 +191,9 @@ let g:NERDToggleCheckAllLines = 1
 
 " Vertical go-to-file split
 map <leader>f :vertical wincmd f<CR>
+
+" Turn on/off line numbers
+map <leader>n :set nu!<CR>
 
 " Copy the absolute path of current file
 nmap <leader>g :let @* = expand("%:p")<cr>
