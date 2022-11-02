@@ -68,6 +68,10 @@ Plugin 'vim-airline/vim-airline'
 " set statusline+=%{gutentags#statusline()}
 " let g:gutentags_cache_dir = '~/gutentags_cache'
 
+" Add VIM-Session, save and restore vim sessions
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
